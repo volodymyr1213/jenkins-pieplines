@@ -8,7 +8,7 @@ node {
     }
 
     stage ("Start Apache") {
-        sh "ec2-user@${DEVIP}       sudo systemctl start httpd"  
+        sh " ssh ec2-user@${DEVIP}       sudo systemctl start httpd"  
     }
 
     stage ("Copy files") {
