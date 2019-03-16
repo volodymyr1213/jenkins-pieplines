@@ -1,7 +1,6 @@
 
 node {
-properties([parameters([string(defaultValue: '127.0.0.1', description: 'Please give IP to host a website ', name: 'DEVIP', trim: true)])])
-properties([pipelineTriggers([pollSCM('* * * * *')])])
+properties([parameters([string(defaultValue: '127.0.0.1', description: 'Please provide IP to host Website ', name: 'DEVIP', trim: false)]), pipelineTriggers([pollSCM('* * * * *')])])
     stage("Pull git"){
         git "git@github.com:volodymyr1213/website.git"
 }
